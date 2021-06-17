@@ -24,13 +24,14 @@ public class DeckOfCards {
      * @param maxCard - getting numbers of cards to be distributed.
      */
     
-    public void getPlayer(int player ,int maxCard) 
-    {
+    public void getPlayer(int player, int maxCard) {
         for (int i = 1; i <= player; i++) {
-            
-            allotCard(i,maxCard);
+
+            allotCard(i, maxCard);
             System.out.println("Player " + i + "' cards:" + "\t");
 
+            //display cards for respective player
+            displayCard(i);
         }
     }
 	
@@ -74,6 +75,31 @@ public class DeckOfCards {
             cards[suit][rank] = playerNumber;
         }
 
+    }
+	
+	 /**
+     * UC7- method for displaying cards in order of sequence
+     * Prints cards in ascending order and also print name of rank and suit
+     * value like ace of 2 ..
+     *
+     * @param playerNumber
+     */
+    
+    private void displayCard(int playerNumber) {
+
+        // creating object of Suit and Rank  
+        SuitAndRank suitRank = new SuitAndRank();
+        for (int suit = 0; suit < 4; suit++) {
+            for (int rank = 0; rank < 13; rank++) {
+                if (cards[suit][rank] == playerNumber) {
+                    System.out.println(suitRank.suit[suit] + " " + suitRank.Rank[rank]);
+
+                }
+
+            }// ends of inner for loop
+
+        } // ends of outer for loop
+        System.out.println();
     }
 	
 }
