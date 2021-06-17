@@ -19,6 +19,7 @@ public class DeckOfCards {
 	int numberOfCards = 52;
 	
 	/**
+	 * Uc 2 and 3 : adding player and sequencing them.
      *  This method is used for getting player and allotting card from here to each player.calling print card method for printing cards.
      * @param player - getting number of players.
      * @param maxCard - getting numbers of cards to be distributed.
@@ -28,11 +29,10 @@ public class DeckOfCards {
     {
         for (int i = 1; i <= player; i++) {
             
-            allotCard(i,maxCard);
+            allotCard(i);
             System.out.println("Player " + i + "' cards:" + "\t");
 
-            //prints cards of respective player
-            printCard(i);
+            
         }
     }
 	
@@ -46,7 +46,7 @@ public class DeckOfCards {
      * @param numberOfCards
      */
     
-    public void allotCard() {
+    public void allotCard(int player) {
 
         for (int i = 0; i < numberOfCards; i++) {
             allotOneCard(i);
@@ -74,8 +74,6 @@ public class DeckOfCards {
         } else {
             cards[suit][rank] = cardNumber;
         }
-		
-		System.out.println(cardNumber);
 
     }
 	

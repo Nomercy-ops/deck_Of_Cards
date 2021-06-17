@@ -26,7 +26,7 @@ public class Runner {
         }
         
 		deckofcards.getPlayer(userInput);
-        deckofcards.allotCard();
+       
     }
 
 }
