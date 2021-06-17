@@ -18,6 +18,24 @@ public class DeckOfCards {
     int [][] cards = new int[4][13];
 	int numberOfCards = 52;
 	
+	/**
+     *  This method is used for getting player and allotting card from here to each player.calling print card method for printing cards.
+     * @param player - getting number of players.
+     * @param maxCard - getting numbers of cards to be distributed.
+     */
+    
+    public void getPlayer(int player) 
+    {
+        for (int i = 1; i <= player; i++) {
+            
+            allotCard(i,maxCard);
+            System.out.println("Player " + i + "' cards:" + "\t");
+
+            //prints cards of respective player
+            printCard(i);
+        }
+    }
+	
     /**
 	 * UC1: Method for getting 52 cards. 
      * here player will get a card 9 cards through a loop.when a loop start and
