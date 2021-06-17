@@ -16,28 +16,27 @@ public class DeckOfCards {
 
     // array for storing cards value.
     int [][] cards = new int[4][13];
-	int numberOfCards = 52;
 	
 	/**
 	 * Uc 2 and 3 : adding player and sequencing them.
-     *  This method is used for getting player and allotting card from here to each player.calling print card method for printing cards.
+     *  uc 5 - This method is used for getting player and allotting card from here to each player.calling print card method for printing cards.
      * @param player - getting number of players.
      * @param maxCard - getting numbers of cards to be distributed.
      */
     
-    public void getPlayer(int player) 
+    public void getPlayer(int player ,int maxCard) 
     {
         for (int i = 1; i <= player; i++) {
             
-            allotCard(i);
+            allotCard(i,maxCard);
             System.out.println("Player " + i + "' cards:" + "\t");
 
-            
         }
     }
 	
     /**
 	 * UC1: Method for getting 52 cards. 
+	 * UC5 : alloting 9 cards to each player.
      * here player will get a card 9 cards through a loop.when a loop start and
      * loop condition is true allot one card method gets call() until player
      *  get 9 cards.
@@ -46,10 +45,10 @@ public class DeckOfCards {
      * @param numberOfCards
      */
     
-    public void allotCard(int player) {
+    public void allotCard(int playerNumber, int numberOfCards) {
 
         for (int i = 0; i < numberOfCards; i++) {
-            shuffleCard(i);
+            shuffleCard(playerNumber);
         }
 
     }
