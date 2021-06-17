@@ -49,20 +49,20 @@ public class DeckOfCards {
     public void allotCard(int player) {
 
         for (int i = 0; i < numberOfCards; i++) {
-            allotOneCard(i);
+            shuffleCard(i);
         }
 
     }
 
     /**
-	 * UC1: method for alloting unique cards.
+	 * UC4: method for alloting unique cards.
      * Allots only one card randomly and also suit and rank will be given to
      * that card.
      *
      * @param 
      */
     
-    private void allotOneCard(int cardNumber) {
+    private void shuffleCard(int playerNumber) {
        
         Random random = new Random();
 
@@ -70,9 +70,9 @@ public class DeckOfCards {
         int rank = random.nextInt(13);
 
         if (cards[suit][rank] != 0) {
-            allotOneCard(cardNumber);
+            allotOneCard(playerNumber);
         } else {
-            cards[suit][rank] = cardNumber;
+            cards[suit][rank] = playerNumber;
         }
 
     }
